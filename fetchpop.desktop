@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=Fetchpop
 Comment=Fetchpop - POP3 mail fetcher
+Comment[pl]=Fetchpop - program do pobierania poczty przez POP3
 Exec=fetchpop -p
 Terminal=1
 Type=Application
