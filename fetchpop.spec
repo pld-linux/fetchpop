@@ -2,7 +2,7 @@ Summary:	POP3 mail client
 Summary(pl):	Klient POP3
 Name:		fetchpop
 Version:	1.9
-Release:	7
+Release:	8
 License:	GPL
 Group:		Applications/Mail
 Source0:	ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/%{name}%{version}.tar.gz
@@ -35,13 +35,13 @@ zachowanie.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1,%{_applnkdir}/Network/Mail}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1,%{_desktopdir}}
 
 %{__make} install install.truncate \
 	BINDIR=$RPM_BUILD_ROOT%{_bindir} \
 	MANDIR=$RPM_BUILD_ROOT%{_mandir}/man1
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Network/Mail
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -52,4 +52,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
-%{_applnkdir}/Network/Mail/*
+%{_desktopdir}/*
