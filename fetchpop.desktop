@@ -3,6 +3,6 @@ Name=Fetchpop
 Comment=Fetchpop - POP3 mail fetcher
 Comment[pl]=Fetchpop - program do pobierania poczty przez POP3
 Exec=fetchpop -p
-Terminal=1
+Terminal=true
 Type=Application
 # vi: encoding=utf-8
