@@ -2,7 +2,7 @@ Summary:	POP3 mail client
 Summary(pl):	Klient POP3
 Name:		fetchpop
 Version:	1.9
-Release:	2d
+Release:	2
 Copyright:	GPL
 Group:		Applications/Mail
 Group(pl):	Aplikacje/Poczta
@@ -60,7 +60,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %changelog
 * Thu Jan 28 1999 Micha³ Kuratczyk <kurkens@polbox.com>
-  [1.9-2d]
+  [1.9-2]
 - added wmconfig,
 - added pl translations,
 - changed BuildRoot to /tmp/%%{name}-%%{version}-root,
