@@ -55,8 +55,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(644,root, man) /usr/man/man1/*
 
 %changelog
-* Wed Jan 20 1999 Micha³ Kuratczyk <kurkens@polbox.com> [1.9-2]
-  [1.9-12]
+* Wed Jan 20 1999 Micha³ Kuratczyk <kurkens@polbox.com>
+  [1.9-2]
 - added pl translations,
 - changed BuildRoot to /tmp/%%{name}-%%{version}-root,
 - added using %%{name} and %%{version} in Source,
