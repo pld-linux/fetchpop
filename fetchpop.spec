@@ -5,10 +5,10 @@ Version:	1.9
 Release:	6
 License:	GPL
 Group:		Applications/Mail
-Source0: 	ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/%{name}%{version}.tar.gz
+Source0:	ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/%{name}%{version}.tar.gz
 Source1:	%{name}.desktop
-Patch1: 	ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/%{name}%{version}.patch1
-Patch2: 	ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/%{name}%{version}.patch2
+Patch1:		ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/%{name}%{version}.patch1
+Patch2:		ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/%{name}%{version}.patch2
 Requires:	smtpdaemon
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -30,7 +30,7 @@ zachowanie.
 %patch2 -p1
 
 %build
-%{__make} all CFLAGS="%{rpmcflags}" LDFLAGS="%{rpmldflags}" 
+%{__make} all CFLAGS="%{rpmcflags}" LDFLAGS="%{rpmldflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -44,7 +44,7 @@ install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Network/Mail
 
 gzip -9nf README RFC1225 TODO FAQ.fetchpop
 
-%clean 
+%clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
