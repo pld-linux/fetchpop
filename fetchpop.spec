@@ -2,7 +2,7 @@ Summary:	POP3 mail client
 Summary(pl):	Klient POP3
 Name:		fetchpop
 Version:	1.9
-Release:	6
+Release:	7
 License:	GPL
 Group:		Applications/Mail
 Source0:	ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/%{name}%{version}.tar.gz
