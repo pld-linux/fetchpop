@@ -59,30 +59,3 @@ rm -rf $RPM_BUILD_ROOT
 
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
-
-%changelog
-* Thu Apr 15 1999 Micha³ Kuratczyk <kura@pld.org.pl>
-  [1.9-4]
-- removed man group from man pages
-- cosmetic changes
-  
-* Mon Feb  8 1999 Micha³ Kuratczyk <kura@pld.org.pl>
-  [1.9-3]
-- added gzipping documentation
-- added LDFLAGS=-s
-- cosmetic changes
-
-* Thu Jan 28 1999 Micha³ Kuratczyk <kura@pld.org.pl>
-  [1.9-2]
-- added wmconfig,
-- added pl translations,
-- changed BuildRoot to /tmp/%%{name}-%%{version}-root,
-- added using %%{name} and %%{version} in Source,
-- added using "install -d" in %install,
-- added gzipping man pages,
-- changed patches names,
-- deleted one patch,
-- added full %attr description in %files.
-
-* Mon Aug 17 1998 Michael Maher <mike@redhat.com>
-- Built package from contrib package
