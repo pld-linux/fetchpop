@@ -6,4 +6,5 @@ Comment[pl]=Fetchpop - program do pobierania poczty przez POP3
 Exec=fetchpop -p
 Terminal=true
 Type=Application
+Categories=ConsoleOnly;Network;Email;
 # vi: encoding=utf-8
