@@ -12,7 +12,7 @@ Patch0:		fetchpop-make.patch
 Patch1:		fetchpop-fetch.patch
 Patch2:		fetchpop-pop.patch
 Requires:	smtpdaemon
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 By default, fetchpop retrieves new mail from the remote pop mail
