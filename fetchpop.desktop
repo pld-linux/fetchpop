@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Fetchpop
+Comment=Fetchpop - POP3 mail fetcher
+Exec=fetchpop -p
+Terminal=1
+Type=Application
