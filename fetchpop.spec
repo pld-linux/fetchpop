@@ -39,8 +39,9 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 install -d $RPM_BUILD_ROOT/etc/X11/wmconfig
 
-make install INSTALL_DIR=$RPM_BUILD_ROOT
-make install.truncate INSTALL_DIR=$RPM_BUILD_ROOT 
+make install install.truncate \
+	INSTALL_DIR=$RPM_BUILD_ROOT \
+	MANDIR=$RPM_BUILD_ROOT%{_mandir}/man1
 
 install %{SOURCE1} $RPM_BUILD_ROOT/etc/X11/wmconfig/fetchpop
 
