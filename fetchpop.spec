@@ -46,7 +46,7 @@ install %{SOURCE1} $RPM_BUILD_ROOT/etc/X11/wmconfig/fetchpop
 
 strip $RPM_BUILD_ROOT/usr/bin/{fetchpop,truncate}
 
-gzip -9nf $RPM_BUILD_ROOT/usr/man/man1/* README RFC1225 TODO FAQ.fetchpop
+gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* README RFC1225 TODO FAQ.fetchpop
 
 %clean 
 rm -rf $RPM_BUILD_ROOT
@@ -56,7 +56,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc {README,RFC1225,TODO,FAQ.fetchpop}.gz
 
 %attr(755,root,root) /usr/bin/*
-/usr/man/man1/*
+%{_mandir}/man1/*
 
 %changelog
 * Thu Apr 15 1999 Micha³ Kuratczyk <kura@pld.org.pl>
