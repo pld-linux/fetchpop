@@ -34,13 +34,13 @@ zachowanie.
 %patch2 -p1
 
 %build
-make all CFLAGS="$RPM_OPT_FLAGS" LDFLAGS=-s 
+%{__make} all CFLAGS="$RPM_OPT_FLAGS" LDFLAGS=-s 
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1,%{_sysconfdir}/X11/wmconfig}
 
-make install install.truncate \
+%{__make} install install.truncate \
 	INSTALL_DIR=$RPM_BUILD_ROOT \
 	MANDIR=$RPM_BUILD_ROOT%{_mandir}/man1
 
