@@ -2,7 +2,7 @@ Summary:	POP3 mail client
 Summary(pl):	Klient POP3
 Name:		fetchpop
 Version:	1.9
-Release:	3
+Release:	4
 Copyright:	GPL
 Group:		Applications/Mail
 Group(pl):	Aplikacje/Poczta
@@ -32,8 +32,7 @@ posiada wiele opcji mog±cych zmieniæ jego domy¶lne zachowanie.
 %patch2 -p1
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" LDFLAGS=-s 
-make all
+make all CFLAGS="$RPM_OPT_FLAGS" LDFLAGS=-s 
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -47,27 +46,31 @@ install %{SOURCE1} $RPM_BUILD_ROOT/etc/X11/wmconfig/fetchpop
 
 strip $RPM_BUILD_ROOT/usr/bin/{fetchpop,truncate}
 
-gzip -9nf $RPM_BUILD_ROOT/usr/man/man1/*
-gzip -9nf README RFC1225 TODO FAQ.fetchpop
+gzip -9nf $RPM_BUILD_ROOT/usr/man/man1/* README RFC1225 TODO FAQ.fetchpop
 
 %clean 
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr (644,root,root,755)
-%doc README.gz RFC1225.gz TODO.gz FAQ.fetchpop.gz
+%doc {README,RFC1225,TODO,FAQ.fetchpop}.gz
 
 %attr(755,root,root) /usr/bin/*
-%attr(644,root, man) /usr/man/man1/*
+/usr/man/man1/*
 
 %changelog
-* Mon Feb  8 1999 Micha³ Kuratczyk <kurkens@polbox.com>
+* Thu Apr 15 1999 Micha³ Kuratczyk <kura@pld.org.pl>
+  [1.9-4]
+- removed man group from man pages
+- cosmetic changes
+  
+* Mon Feb  8 1999 Micha³ Kuratczyk <kura@pld.org.pl>
   [1.9-3]
 - added gzipping documentation
 - added LDFLAGS=-s
 - cosmetic changes
 
-* Thu Jan 28 1999 Micha³ Kuratczyk <kurkens@polbox.com>
+* Thu Jan 28 1999 Micha³ Kuratczyk <kura@pld.org.pl>
   [1.9-2]
 - added wmconfig,
 - added pl translations,
