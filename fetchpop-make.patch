@@ -1,0 +1,22 @@
+diff -uNr fetchpop1.9.orig/Makefile fetchpop1.9/Makefile
+--- fetchpop1.9.orig/Makefile	Tue Jun 25 22:21:43 1996
++++ fetchpop1.9/Makefile	Thu Apr 24 17:16:54 1997
+@@ -4,14 +4,14 @@
+ # and also edit config.h file if you need.
+ # if you don't know what to do, don't worry about it. Just type 'make'
+ 
+-BINDIR=/usr/local/bin
+-MANDIR=/usr/local/man/man1
++BINDIR=$(INSTALL_DIR)/usr/bin
++MANDIR=$(INSTALL_DIR)/usr/man/man1
+ 
+ CC=gcc
+ 
+-CFLAGS= -g 
++#CFLAGS= -g 
+ #CFLAGS= -O2 -m486 -pipe 
+-#CFLAGS= -O2 -m486 -fno-strength-reduce -Wall -pipe
++CFLAGS= -O2 -fno-strength-reduce -Wall -pipe
+ 
+ #--------------------------------------------------------------
+ # Valid flags for EXTRA_OPTION
