@@ -3,10 +3,11 @@ Summary(pl):	Klient POP3
 Name:		fetchpop
 Version:	1.9
 Release:	2d
-Source:		ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/%{name}%{version}.tar.gz
 Copyright:	GPL
 Group:		Applications/Mail
 Group(pl):	Aplikacje/Poczta
+Source:		ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/%{name}%{version}.tar.gz
+Source1:	fetchpop.wmconfig
 Patch0:		fetchpop-make.patch
 Patch1:		fetchpop-fetch.patch
 Patch2:		fetchpop-pop.patch
@@ -37,9 +38,12 @@ make all
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT/{usr/bin/,usr/man/man1}
+install -d $RPM_BUILD_ROOT/etc/X11/wmconfig
 
 make install INSTALL_DIR=$RPM_BUILD_ROOT
 make install.truncate INSTALL_DIR=$RPM_BUILD_ROOT 
+
+install %{SOURCE1} $RPM_BUILD_ROOT/etc/X11/wmconfig/fetchpop
 
 strip $RPM_BUILD_ROOT/usr/bin/{fetchpop,truncate}
 
@@ -55,6 +59,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(644,root, man) /usr/man/man1/*
 
 %changelog
+* Thu Jan 28 1999 Micha³ Kuratczyk <kurkens@polbox.com>
+- added wmconfig
+
 * Wed Jan 20 1999 Micha³ Kuratczyk <kurkens@polbox.com>
   [1.9-2]
 - added pl translations,
