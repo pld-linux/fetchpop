@@ -60,10 +60,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %changelog
 * Thu Jan 28 1999 Micha³ Kuratczyk <kurkens@polbox.com>
-- added wmconfig
-
-* Wed Jan 20 1999 Micha³ Kuratczyk <kurkens@polbox.com>
-  [1.9-2]
+  [1.9-2d]
+- added wmconfig,
 - added pl translations,
 - changed BuildRoot to /tmp/%%{name}-%%{version}-root,
 - added using %%{name} and %%{version} in Source,
