@@ -36,8 +36,7 @@ make all CFLAGS="$RPM_OPT_FLAGS" LDFLAGS=-s
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
-install -d $RPM_BUILD_ROOT/etc/X11/wmconfig
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1,/etc/X11/wmconfig}
 
 make install install.truncate \
 	INSTALL_DIR=$RPM_BUILD_ROOT \
