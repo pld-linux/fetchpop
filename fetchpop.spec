@@ -6,6 +6,7 @@ Release:	6
 License:	GPL
 Group:		Applications/Mail
 Source0:	ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/%{name}%{version}.tar.gz
+# Source0-md5:	0c9b186791ea1e3da1b28f4f6094ca01
 Source1:	%{name}.desktop
 Patch1:		ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/%{name}%{version}.patch1
 Patch2:		ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/%{name}%{version}.patch2
