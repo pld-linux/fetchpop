@@ -36,7 +36,7 @@ make all CFLAGS="$RPM_OPT_FLAGS" LDFLAGS=-s
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/{usr/bin/,usr/man/man1}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1}
 install -d $RPM_BUILD_ROOT/etc/X11/wmconfig
 
 make install INSTALL_DIR=$RPM_BUILD_ROOT
@@ -46,7 +46,8 @@ install %{SOURCE1} $RPM_BUILD_ROOT/etc/X11/wmconfig/fetchpop
 
 strip $RPM_BUILD_ROOT%{_bindir}/{fetchpop,truncate}
 
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* README RFC1225 TODO FAQ.fetchpop
+gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* \
+	README RFC1225 TODO FAQ.fetchpop
 
 %clean 
 rm -rf $RPM_BUILD_ROOT
