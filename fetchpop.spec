@@ -3,10 +3,11 @@ Summary(pl):	Klient POP3
 Name:		fetchpop
 Version:	1.9
 Release:	4
-Copyright:	GPL
+License:	GPL
 Group:		Applications/Mail
+Group(pt):	Aplicações/Correio Eletrônico
 Group(pl):	Aplikacje/Poczta
-Source0		ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/%{name}%{version}.tar.gz
+Source0 ftp:	//tsx-11.mit.edu/pub/linux/sources/usr.bin/%{name}%{version}.tar.gz
 Source1:	fetchpop.wmconfig
 Patch0:		fetchpop-make.patch
 Patch1:		fetchpop-fetch.patch
@@ -17,13 +18,14 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 By default, fetchpop retrieves new mail from the remote pop mail
 server and appends it to your mailbox file, using information in the
-file ~/.fetchhost.  Fetchpop has many options to change its default
-behavior.     
+file ~/.fetchhost. Fetchpop has many options to change its default
+behavior.
 
 %description -l pl
-Domy¶lnie fetchpop ¶ci±ga pocztê ze zdalnego serwera poczty i wrzuca j±
-do twojej skrzynki u¿ywaj±c informacji z pliku ~/.fetchhost. Fetchpop
-posiada wiele opcji mog±cych zmieniæ jego domy¶lne zachowanie.
+Domy¶lnie fetchpop ¶ci±ga pocztê ze zdalnego serwera poczty i wrzuca
+j± do twojej skrzynki u¿ywaj±c informacji z pliku ~/.fetchhost.
+Fetchpop posiada wiele opcji mog±cych zmieniæ jego domy¶lne
+zachowanie.
 
 %prep
 %setup -q -n %{name}%{version}
@@ -36,13 +38,13 @@ make all CFLAGS="$RPM_OPT_FLAGS" LDFLAGS=-s
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1,/etc/X11/wmconfig}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1,%{_sysconfdir}/X11/wmconfig}
 
 make install install.truncate \
 	INSTALL_DIR=$RPM_BUILD_ROOT \
 	MANDIR=$RPM_BUILD_ROOT%{_mandir}/man1
 
-install %{SOURCE1} $RPM_BUILD_ROOT/etc/X11/wmconfig/fetchpop
+install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/X11/wmconfig/fetchpop
 
 strip $RPM_BUILD_ROOT%{_bindir}/{fetchpop,truncate}
 
@@ -53,7 +55,7 @@ gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* \
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr (644,root,root,755)
+%defattr(644,root,root,755)
 %doc {README,RFC1225,TODO,FAQ.fetchpop}.gz
 
 %attr(755,root,root) %{_bindir}/*
