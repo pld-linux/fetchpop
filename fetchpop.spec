@@ -5,13 +5,14 @@ Version:	1.9
 Release:	4
 License:	GPL
 Group:		Applications/Mail
-Group(pt):	Aplicações/Correio Eletrônico
+Group(de):	Applikationen/Post
 Group(pl):	Aplikacje/Poczta
+Group(pt):	Aplicações/Correio Eletrônico
 Source0 ftp:	//tsx-11.mit.edu/pub/linux/sources/usr.bin/%{name}%{version}.tar.gz
-Source1:	fetchpop.wmconfig
-Patch0:		fetchpop-make.patch
-Patch1:		fetchpop-fetch.patch
-Patch2:		fetchpop-pop.patch
+Source1:	%{name}.wmconfig
+Patch0:		%{name}-make.patch
+Patch1:		%{name}-fetch.patch
+Patch2:		%{name}-pop.patch
 Requires:	smtpdaemon
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -34,7 +35,7 @@ zachowanie.
 %patch2 -p1
 
 %build
-%{__make} all CFLAGS="$RPM_OPT_FLAGS" LDFLAGS=-s 
+%{__make} all CFLAGS="%{rpmcflags}" LDFLAGS="%{rpmldflags}" 
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -46,10 +47,7 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1,%{_sysconfdir}/X11/wmconfi
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/X11/wmconfig/fetchpop
 
-strip $RPM_BUILD_ROOT%{_bindir}/{fetchpop,truncate}
-
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* \
-	README RFC1225 TODO FAQ.fetchpop
+gzip -9nf README RFC1225 TODO FAQ.fetchpop
 
 %clean 
 rm -rf $RPM_BUILD_ROOT
