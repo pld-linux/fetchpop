@@ -1,5 +1,0 @@
-fetchpop	name		"fetchpop"
-fetchpop	description	"POP3 mail client"
-fetchpop	exec		"fetchpop -p"
-fetchpop	group		"Networking/Mail"
-
