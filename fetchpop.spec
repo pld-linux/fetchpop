@@ -8,7 +8,7 @@ Group:		Applications/Mail
 Group(de):	Applikationen/Post
 Group(pl):	Aplikacje/Poczta
 Group(pt):	Aplicações/Correio Eletrônico
-Source0 ftp:	//tsx-11.mit.edu/pub/linux/sources/usr.bin/%{name}%{version}.tar.gz
+Source0 	ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/%{name}%{version}.tar.gz
 Source1:	%{name}.wmconfig
 Patch0:		%{name}-make.patch
 Patch1:		%{name}-fetch.patch
