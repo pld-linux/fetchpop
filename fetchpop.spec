@@ -42,14 +42,12 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1,%{_applnkdir}/Network/Mail
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Network/Mail
 
-gzip -9nf README RFC1225 TODO FAQ.fetchpop
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc README RFC1225 TODO FAQ.fetchpop
 
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
