@@ -5,9 +5,6 @@ Version:	1.9
 Release:	6
 License:	GPL
 Group:		Applications/Mail
-Group(de):	Applikationen/Post
-Group(pl):	Aplikacje/Poczta
-Group(pt):	Aplicações/Correio Eletrônico
 Source0: 	ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/%{name}%{version}.tar.gz
 Source1:	%{name}.desktop
 Patch1: 	ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/%{name}%{version}.patch1
