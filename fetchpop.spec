@@ -2,17 +2,16 @@ Summary:	POP3 mail client
 Summary(pl):	Klient POP3
 Name:		fetchpop
 Version:	1.9
-Release:	4
+Release:	6
 License:	GPL
 Group:		Applications/Mail
 Group(de):	Applikationen/Post
 Group(pl):	Aplikacje/Poczta
 Group(pt):	Aplicações/Correio Eletrônico
-Source0 	ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/%{name}%{version}.tar.gz
-Source1:	%{name}.wmconfig
-Patch0:		%{name}-make.patch
-Patch1:		%{name}-fetch.patch
-Patch2:		%{name}-pop.patch
+Source0: 	ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/%{name}%{version}.tar.gz
+Source1:	%{name}.desktop
+Patch1: 	ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/%{name}%{version}.patch1
+Patch2: 	ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/%{name}%{version}.patch2
 Requires:	smtpdaemon
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -30,7 +29,6 @@ zachowanie.
 
 %prep
 %setup -q -n %{name}%{version}
-%patch0 -p1 
 %patch1 -p1
 %patch2 -p1
 
@@ -39,13 +37,13 @@ zachowanie.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1,%{_sysconfdir}/X11/wmconfig}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man1,%{_applnkdir}/Network/Mail}
 
 %{__make} install install.truncate \
-	INSTALL_DIR=$RPM_BUILD_ROOT \
+	BINDIR=$RPM_BUILD_ROOT%{_bindir} \
 	MANDIR=$RPM_BUILD_ROOT%{_mandir}/man1
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/X11/wmconfig/fetchpop
+install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Network/Mail
 
 gzip -9nf README RFC1225 TODO FAQ.fetchpop
 
@@ -58,3 +56,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
+%{_applnkdir}/Network/Mail/*
