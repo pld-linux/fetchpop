@@ -44,7 +44,7 @@ make install.truncate INSTALL_DIR=$RPM_BUILD_ROOT
 
 install %{SOURCE1} $RPM_BUILD_ROOT/etc/X11/wmconfig/fetchpop
 
-strip $RPM_BUILD_ROOT/usr/bin/{fetchpop,truncate}
+strip $RPM_BUILD_ROOT%{_bindir}/{fetchpop,truncate}
 
 gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* README RFC1225 TODO FAQ.fetchpop
 
@@ -55,7 +55,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr (644,root,root,755)
 %doc {README,RFC1225,TODO,FAQ.fetchpop}.gz
 
-%attr(755,root,root) /usr/bin/*
+%attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
 
 %changelog
