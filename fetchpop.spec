@@ -2,11 +2,11 @@ Summary:	POP3 mail client
 Summary(pl):	Klient POP3
 Name:		fetchpop
 Version:	1.9
-Release:	2d
+Release:	3
 Copyright:	GPL
 Group:		Applications/Mail
 Group(pl):	Aplikacje/Poczta
-Source:		ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/%{name}%{version}.tar.gz
+Source0		ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/%{name}%{version}.tar.gz
 Source1:	fetchpop.wmconfig
 Patch0:		fetchpop-make.patch
 Patch1:		fetchpop-fetch.patch
@@ -32,7 +32,7 @@ posiada wiele opcji mog±cych zmieniæ jego domy¶lne zachowanie.
 %patch2 -p1
 
 %build
-CFLAGS="$RPM_OPT_FLAGS"
+CFLAGS="$RPM_OPT_FLAGS" LDFLAGS=-s 
 make all
 
 %install
@@ -48,19 +48,27 @@ install %{SOURCE1} $RPM_BUILD_ROOT/etc/X11/wmconfig/fetchpop
 strip $RPM_BUILD_ROOT/usr/bin/{fetchpop,truncate}
 
 gzip -9nf $RPM_BUILD_ROOT/usr/man/man1/*
+gzip -9nf README RFC1225 TODO FAQ.fetchpop
 
 %clean 
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr (644,root,root,755)
-%doc README RFC1225 TODO FAQ.fetchpop
+%doc README.gz RFC1225.gz TODO.gz FAQ.fetchpop.gz
+
 %attr(755,root,root) /usr/bin/*
 %attr(644,root, man) /usr/man/man1/*
 
 %changelog
+* Mon Feb  8 1999 Micha³ Kuratczyk <kurkens@polbox.com>
+  [1.9-3]
+- added gzipping documentation
+- added LDFLAGS=-s
+- cosmetic changes
+
 * Thu Jan 28 1999 Micha³ Kuratczyk <kurkens@polbox.com>
-  [1.9-2d]
+  [1.9-2]
 - added wmconfig,
 - added pl translations,
 - changed BuildRoot to /tmp/%%{name}-%%{version}-root,
