@@ -52,4 +52,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
-%{_desktopdir}/*
+%{_desktopdir}/*.desktop
