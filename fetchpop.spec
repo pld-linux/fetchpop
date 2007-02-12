@@ -1,5 +1,5 @@
 Summary:	POP3 mail client
-Summary(pl.UTF-8):   Klient POP3
+Summary(pl.UTF-8):	Klient POP3
 Name:		fetchpop
 Version:	1.9
 Release:	8
