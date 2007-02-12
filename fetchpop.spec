@@ -1,5 +1,5 @@
 Summary:	POP3 mail client
-Summary(pl):	Klient POP3
+Summary(pl.UTF-8):   Klient POP3
 Name:		fetchpop
 Version:	1.9
 Release:	8
@@ -19,10 +19,10 @@ server and appends it to your mailbox file, using information in the
 file ~/.fetchhost. Fetchpop has many options to change its default
 behavior.
 
-%description -l pl
-Domy¶lnie fetchpop ¶ci±ga pocztê ze zdalnego serwera poczty i wrzuca
-j± do twojej skrzynki u¿ywaj±c informacji z pliku ~/.fetchhost.
-Fetchpop posiada wiele opcji mog±cych zmieniæ jego domy¶lne
+%description -l pl.UTF-8
+DomyÅ›lnie fetchpop Å›ciÄ…ga pocztÄ™ ze zdalnego serwera poczty i wrzuca
+jÄ… do twojej skrzynki uÅ¼ywajÄ…c informacji z pliku ~/.fetchhost.
+Fetchpop posiada wiele opcji mogÄ…cych zmieniÄ‡ jego domyÅ›lne
 zachowanie.
 
 %prep
